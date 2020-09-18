@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mingler/Screens/ExamDetails.dart';
 
 class Unreads extends StatelessWidget {
   String title;
@@ -54,13 +55,13 @@ class Courses extends StatelessWidget {
       ),
       children: <Widget>[
         Column(
-          children: tile(),
+          children: tile(context),
         )
       ],
     );
   }
 
-  tile() {
+  tile(context) {
     List<Widget> list = [];
     try {
       for (var i = 0; i <= 3; i++) {
@@ -86,16 +87,17 @@ class Courses extends StatelessWidget {
                 // horizontal: MediaQuery.of(context).size.width * 0.1,
                 ),
             child: GestureDetector(
-              // onTap: () {
-              //   // print(data[i]["url"]);
-              //   Navigator.of(context).push(
-              //     MaterialPageRoute(
-              //       builder: (BuildContext context2) => ThemeConsumer(
-              //         child: ShowFormuleScreen(data[i]),
-              //       ),
-              //     ),
-              //   );
-              // },
+              onTap: () {
+                // print(data[i]["url"]);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => ExamDetails()
+                      // ThemeConsumer(
+                      // child: ShowFormuleScreen(data[i]),
+                      // ),
+                      ),
+                );
+              },
               child: Container(
                 width: double.infinity,
                 // color: Theme.of(context).dividerColor,
@@ -103,7 +105,7 @@ class Courses extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      Icon(Icons.card_giftcard),
+                      Icon(Icons.card_membership),
                       SizedBox(
                         width: 10,
                       ),
@@ -145,13 +147,13 @@ class Groups extends StatelessWidget {
       ),
       children: <Widget>[
         Column(
-          children: tile(),
+          children: tile(context),
         )
       ],
     );
   }
 
-  tile() {
+  tile(context) {
     List<Widget> list = [];
     try {
       for (var i = 0; i <= 3; i++) {
@@ -177,16 +179,17 @@ class Groups extends StatelessWidget {
                 // horizontal: MediaQuery.of(context).size.width * 0.1,
                 ),
             child: GestureDetector(
-              // onTap: () {
-              //   // print(data[i]["url"]);
-              //   Navigator.of(context).push(
-              //     MaterialPageRoute(
-              //       builder: (BuildContext context2) => ThemeConsumer(
-              //         child: ShowFormuleScreen(data[i]),
-              //       ),
-              //     ),
-              //   );
-              // },
+              onTap: () {
+                // print(data[i]["url"]);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => ExamDetails(),
+                    // ThemeConsumer(
+                    // child: ShowFormuleScreen(data[i]),
+                    // ),
+                  ),
+                );
+              },
               child: Container(
                 width: double.infinity,
                 // color: Theme.of(context).dividerColor,
@@ -236,13 +239,13 @@ class DirectMessage extends StatelessWidget {
       ),
       children: <Widget>[
         Column(
-          children: tile(),
+          children: tile(context),
         )
       ],
     );
   }
 
-  tile() {
+  tile(context) {
     List<Widget> list = [];
     try {
       for (var i = 0; i <= 1; i++) {
@@ -265,16 +268,17 @@ class DirectMessage extends StatelessWidget {
                 // horizontal: MediaQuery.of(context).size.width * 0.1,
                 ),
             child: GestureDetector(
-              // onTap: () {
-              //   // print(data[i]["url"]);
-              //   Navigator.of(context).push(
-              //     MaterialPageRoute(
-              //       builder: (BuildContext context2) => ThemeConsumer(
-              //         child: ShowFormuleScreen(data[i]),
-              //       ),
-              //     ),
-              //   );
-              // },
+              onTap: () {
+                // print(data[i]["url"]);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (BuildContext context2) => ExamDetails()
+                      // ThemeConsumer(
+                      // child: ShowFormuleScreen(data[i]),
+                      // ),
+                      ),
+                );
+              },
               child: Container(
                 width: double.infinity,
                 // color: Theme.of(context).dividerColor,
@@ -309,5 +313,48 @@ class DirectMessage extends StatelessWidget {
     }
 
     return list;
+  }
+}
+
+class BottomNavArea extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Container(
+        height: 50,
+        alignment: Alignment.bottomCenter,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            RaisedButton(
+                color: Color(0XFFFFA169),
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Text(
+                      "Feedback",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+                shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(30.0))),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(Icons.logout),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Log out",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

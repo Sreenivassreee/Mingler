@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mingler/Screens/ExamDetails.dart';
 import 'package:mingler/Screens/HomePage.dart';
 
 void main() => runApp(myApp());
