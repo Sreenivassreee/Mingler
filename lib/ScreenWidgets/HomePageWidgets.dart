@@ -88,19 +88,13 @@ class Courses extends StatelessWidget {
                 ),
             child: GestureDetector(
               onTap: () {
-                // print(data[i]["url"]);
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (BuildContext context) => ExamDetails()
-                      // ThemeConsumer(
-                      // child: ShowFormuleScreen(data[i]),
-                      // ),
-                      ),
+                      builder: (BuildContext context) => ExamDetails()),
                 );
               },
               child: Container(
                 width: double.infinity,
-                // color: Theme.of(context).dividerColor,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -136,8 +130,6 @@ class Groups extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      // tilePadding: EdgeInsets.all(0),
-      // leading: Icon(Icons.add),
       title: Padding(
         padding: const EdgeInsets.only(left: 0.0),
         child: new Text(
@@ -175,24 +167,17 @@ class Groups extends StatelessWidget {
 
         list.add(
           Padding(
-            padding: EdgeInsets.symmetric(
-                // horizontal: MediaQuery.of(context).size.width * 0.1,
-                ),
+            padding: EdgeInsets.symmetric(),
             child: GestureDetector(
               onTap: () {
-                // print(data[i]["url"]);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) => ExamDetails(),
-                    // ThemeConsumer(
-                    // child: ShowFormuleScreen(data[i]),
-                    // ),
                   ),
                 );
               },
               child: Container(
                 width: double.infinity,
-                // color: Theme.of(context).dividerColor,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -228,13 +213,28 @@ class DirectMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      // tilePadding: EdgeInsets.all(0),
-      // leading: Icon(Icons.add),
+      expandedAlignment: Alignment.bottomLeft,
       title: Padding(
         padding: const EdgeInsets.only(left: 0.0),
-        child: new Text(
-          "Direct message",
-          style: TextStyle(color: Colors.black),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            new Text(
+              "Direct message",
+              style: TextStyle(color: Colors.black),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: CircleAvatar(
+                child: Icon(
+                  Icons.add,
+                  size: 20,
+                ),
+                radius: 11,
+                backgroundColor: Colors.green,
+              ),
+            )
+          ],
         ),
       ),
       children: <Widget>[
@@ -264,24 +264,16 @@ class DirectMessage extends StatelessWidget {
 
         list.add(
           Padding(
-            padding: EdgeInsets.symmetric(
-                // horizontal: MediaQuery.of(context).size.width * 0.1,
-                ),
+            padding: EdgeInsets.symmetric(),
             child: GestureDetector(
               onTap: () {
-                // print(data[i]["url"]);
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (BuildContext context2) => ExamDetails()
-                      // ThemeConsumer(
-                      // child: ShowFormuleScreen(data[i]),
-                      // ),
-                      ),
+                      builder: (BuildContext context2) => ExamDetails()),
                 );
               },
               child: Container(
                 width: double.infinity,
-                // color: Theme.of(context).dividerColor,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(

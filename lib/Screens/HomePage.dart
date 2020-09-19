@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mingler/Screens/HomePageWidgets.dart';
+import 'package:mingler/ScreenWidgets/HomePageWidgets.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -83,7 +83,6 @@ class HomePage extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 8.0),
                       child: ListView(
                         shrinkWrap: true,
-                        // scrollDirection: ,
                         children: [
                           Unreads(
                             title: "Robotics",
